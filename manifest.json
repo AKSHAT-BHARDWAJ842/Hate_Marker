@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name":"color_change",
+    "version":"1.0",
+    "description":"change font color",
+    "icons":{
+        "16":"Twitter_16.png"
+    },
+    "page_action": {
+    "default_icon":"Twitter_16.png",
+    "default_popup": "popup.html",
+    "default_title":"colorChange"
+    },
+    "background":{
+        "scripts":["eventsPage.js"],
+        "persistent":false
+    },
+    "content_scripts":[
+        {
+            "matches":["https://twitter.com/*"],
+            "js":["content.js","jquery-3.6.0.min.js"],
+            "css":["content.css"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://twitter.com/*"
+    ]
+    
+    
+}
